@@ -1,0 +1,22 @@
+class Solution {
+public:
+    bool isAnagram(string s, string t) {
+        if(s.size()==t.size()){
+            int count[26]={0};
+            for(char ch: s){
+                count[ch-'a']++;
+            }
+            for(char ch: t){
+                count[ch-'a']--;
+                if(count[ch-'a']<0){
+                    return false;
+                }
+
+            }
+        return true;
+        }else{
+            return false;
+        }
+
+    }
+};
